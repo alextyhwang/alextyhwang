@@ -1,6 +1,10 @@
-![Banner Image](alexicon.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="alexdark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="alexlight.svg">
+  <img alt="Fallback image description" src="alexlight.svg">
+</picture>
 
-## Hi! I'm Alex 👋
+---
 
 I'm a Computer Science undergraduate at the [Rochester Institute of Technology](https://www.rit.edu/) with a passion for full-stack development and generative AI. I love building exciting projects and solving interesting technical challenges.
 
