@@ -5,9 +5,9 @@
 </picture>
 
 <p align="center">
-  <a href="https://x.com/CaptainATW"><img src="social-icons/x.svg" alt="X (Twitter)"></a>
-  <a href="https://www.linkedin.com/"><img src="social-icons/linkedin.svg" alt="LinkedIn"></a>
-  <a href="mailto:at.alex.wang@gmail.com"><img src="social-icons/email.svg" alt="Email"></a>
+  <a href="https://x.com/CaptainATW" target="_blank" rel="noopener noreferrer"><img src="social-icons/x.svg" alt="X (Twitter)" width="65" height="65"></a>
+  <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><img src="social-icons/linkedin.svg" alt="LinkedIn" width="65" height="65"></a>
+  <a href="mailto:at.alex.wang@gmail.com" target="_blank" rel="noopener noreferrer"><img src="social-icons/email.svg" alt="Email" width="65" height="65"></a>
 </p>
 
 Hi, I'm Alex — a full stack developer & designer passionate about building exciting projects and exploring generative AI. I'm currently studying Computer Science at the [Rochester Institute of Technology](https://www.rit.edu/).
