@@ -5,9 +5,11 @@
 </picture>
 
 <p align="center">
-  <a href="https://x.com/CaptainATW" target="_blank" rel="noopener noreferrer"><img src="social-icons/x.svg" alt="X (Twitter)" width="65" height="65"></a>
-  <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><img src="social-icons/linkedin.svg" alt="LinkedIn" width="65" height="65"></a>
-  <a href="mailto:at.alex.wang@gmail.com" target="_blank" rel="noopener noreferrer"><img src="social-icons/email.svg" alt="Email" width="65" height="65"></a>
+  <img src="social-icons/1.svg" alt="Opening 0" width="70" height="70">
+  <a href="https://x.com/CaptainATW" target="_blank" rel="noopener noreferrer"><img src="social-icons/x.svg" alt="X (Twitter)" width="70" height="70"></a>
+  <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><img src="social-icons/linkedin.svg" alt="LinkedIn" width="70" height="70"></a>
+  <a href="mailto:at.alex.wang@gmail.com" target="_blank" rel="noopener noreferrer"><img src="social-icons/email.svg" alt="Email" width="70" height="70"></a>
+  <img src="social-icons/0.svg" alt="Closing 1" width="70" height="70">
 </p>
 
 Hi, I'm Alex — a full stack developer & designer passionate about building exciting projects and exploring generative AI. I'm currently studying Computer Science at the [Rochester Institute of Technology](https://www.rit.edu/).
