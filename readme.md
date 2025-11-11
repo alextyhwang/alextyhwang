@@ -4,16 +4,19 @@
   <img alt="Fallback image description" src="alexlight.svg">
 </picture>
 
----
+<p align="center">
+  <a href="https://x.com/CaptainATW"><img src="social-icons/x.svg" alt="X (Twitter)"></a>
+  <a href="https://www.linkedin.com/"><img src="social-icons/linkedin.svg" alt="LinkedIn"></a>
+  <a href="mailto:at.alex.wang@gmail.com"><img src="social-icons/email.svg" alt="Email"></a>
+</p>
 
-I'm a Computer Science undergraduate at the [Rochester Institute of Technology](https://www.rit.edu/) with a passion for full-stack development and generative AI. I love building exciting projects and solving interesting technical challenges.
+Hi, I'm Alex — a full stack developer & designer passionate about building exciting projects and exploring generative AI. I'm currently studying Computer Science at the [Rochester Institute of Technology](https://www.rit.edu/).
 
 ---
 
 ### What I'm Up To
 
 - 📚 **Studying** Computer Science at RIT (Expected Graduation: May 2028)
-- 💻 **Software Engineering Intern** at Real Wave Capital — building UIs for autonomous AI agents
 - 🚀 **Founder** of Bay Area Stem Academy ([BASA](https://bayareastemacademy.org)), a non-profit providing free STEM education to students — we've reached over 700 learners!
 - 👨‍💻 **Tinkering** with personal projects in my free time
 
