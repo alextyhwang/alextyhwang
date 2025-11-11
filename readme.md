@@ -5,22 +5,18 @@
 </picture>
 
 <p align="center">
-  <img src="social-icons/1.svg" alt="Opening 0" width="70" height="70">
+  <a href="https://www.linkedin.com/in/alex-tyh-wang/" target="_blank" rel="noopener noreferrer"><img src="social-icons/linkedin.svg" alt="LinkedIn" width="70" height="70"></a>
   <a href="https://x.com/CaptainATW" target="_blank" rel="noopener noreferrer"><img src="social-icons/x.svg" alt="X (Twitter)" width="70" height="70"></a>
-  <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><img src="social-icons/linkedin.svg" alt="LinkedIn" width="70" height="70"></a>
   <a href="mailto:at.alex.wang@gmail.com" target="_blank" rel="noopener noreferrer"><img src="social-icons/email.svg" alt="Email" width="70" height="70"></a>
-  <img src="social-icons/0.svg" alt="Closing 1" width="70" height="70">
 </p>
 
-Hi, I'm Alex — a full stack developer & designer passionate about building exciting projects and exploring generative AI. I'm currently studying Computer Science at the [Rochester Institute of Technology](https://www.rit.edu/).
+Hi, I'm Alex — a full stack developer & designer passionate about building exciting projects and exploring generative AI. I'm currently studying Computer Science at [Rochester Institute of Technology](https://www.rit.edu/).
 
 ---
 
 ### What I'm Up To
 
-- 📚 **Studying** Computer Science at RIT (Expected Graduation: May 2028)
-- 🚀 **Founder** of Bay Area Stem Academy ([BASA](https://bayareastemacademy.org)), a non-profit providing free STEM education to students — we've reached over 700 learners!
-- 👨‍💻 **Tinkering** with personal projects in my free time
+- Founder of **Bay Area Stem Academy** ([BASA](https://bayareastemacademy.org)), a non-profit providing free STEM education to students — we've reached over 700 students!
 
 ---
 
