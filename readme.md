@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://www.linkedin.com/in/alex-tyh-wang/" target="_blank" rel="noopener noreferrer"><img src="social-icons/linkedin.svg" alt="LinkedIn" width="70" height="70"></a>
-  <a href="https://x.com/CaptainATW" target="_blank" rel="noopener noreferrer"><img src="social-icons/x.svg" alt="X (Twitter)" width="70" height="70"></a>
+  <a href="https://x.com/alextyhwang" target="_blank" rel="noopener noreferrer"><img src="social-icons/x.svg" alt="X (Twitter)" width="70" height="70"></a>
   <a href="mailto:at.alex.wang@gmail.com" target="_blank" rel="noopener noreferrer"><img src="social-icons/email.svg" alt="Email" width="70" height="70"></a>
 </p>
 
