@@ -16,11 +16,12 @@ Hi, I'm Alex — a full stack developer & designer passionate about building exc
 
 ### What I'm Up To
 
-- Founder of **Bay Area Stem Academy** ([BASA](https://bayareastemacademy.org)), a non-profit providing free STEM education to students — we've reached over 700 students!
+- Founder of **Bay Area Stem Academy** ([BASA](https://bayareastemacademy.org)), a non-profit providing free STEM education to students — we've reached over 600 students!
 
 ---
 
 ### A Couple of My Projects
 
-- [**Chatio Agentic Behavior Benchmark**](https://chatio.dev): An evaluation suite for large language models that focuses on real-world usability.
-- [**Word Hunt Game**](https://wordhunt.org): An interactive word game built with Next.js and TypeScript.
+- [**Chatio Agentic Behavior Benchmark** | chatio.dev](https://chatio.dev): An evaluation suite for large language models that focuses on real-world usability.
+- [**Word Hunt Game** | wordhunt.org](https://wordhunt.org): An interactive word game built with Next.js and TypeScript.
+
