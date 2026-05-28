@@ -17,7 +17,7 @@ Hi, I'm Alex — a full stack developer & designer passionate about building exc
 ### What I'm Up To
 
 - Founder of **Bay Area Stem Academy** ([BASA](https://bayareastemacademy.org)), a non-profit providing free STEM education to students — we've reached over 600 students!
-
+https://github.com/Bay-Area-Stem-Academy
 ---
 
 ### A Couple of My Projects
