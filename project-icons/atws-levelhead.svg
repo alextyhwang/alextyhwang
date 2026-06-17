@@ -1,0 +1,13 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" role="img" aria-label="ATW's Levelhead">
+  <rect width="64" height="64" fill="#243b2a"/>
+  <rect x="14" y="10" width="36" height="8" fill="#6b3f20"/>
+  <rect x="10" y="18" width="44" height="28" fill="#8b5a2b"/>
+  <rect x="18" y="26" width="8" height="8" fill="#1f2937"/>
+  <rect x="38" y="26" width="8" height="8" fill="#1f2937"/>
+  <rect x="26" y="38" width="12" height="4" fill="#3f2a17"/>
+  <rect x="18" y="46" width="28" height="8" fill="#22c55e"/>
+  <rect x="14" y="54" width="36" height="4" fill="#16a34a"/>
+  <rect x="24" y="12" width="4" height="4" fill="#facc15"/>
+  <rect x="32" y="12" width="4" height="4" fill="#facc15"/>
+  <rect x="40" y="12" width="4" height="4" fill="#facc15"/>
+</svg>
