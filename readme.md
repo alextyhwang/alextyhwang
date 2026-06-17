@@ -1,7 +1,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="alexdark.svg">
   <source media="(prefers-color-scheme: light)" srcset="alexlight.svg">
-  <img alt="Fallback image description" src="alexlight.svg">
+  <img alt="Alex Tyh Wang" src="alexlight.svg">
 </picture>
 
 <p align="center">
@@ -10,18 +10,15 @@
   <a href="mailto:at.alex.wang@gmail.com" target="_blank" rel="noopener noreferrer"><img src="social-icons/email.svg" alt="Email" width="70" height="70"></a>
 </p>
 
-Hi, I'm Alex — a full stack developer & designer passionate about building exciting projects and exploring generative AI. I'm currently studying Computer Science at [Rochester Institute of Technology](https://www.rit.edu/).
+Hi, I'm Alex Tyh Wang. I study Computer Science at [RIT](https://www.rit.edu/) and build AI products, games, and useful tools.
 
----
+### Projects
 
-### What I'm Up To
+- [**Chatio Chat**](https://github.com/alextyhwang/chatio-chat): Self-hostable AI chat with local storage, Apache-2.0 source, bring-your-own API keys, and 300+ OpenRouter models.
+- [**Chatio Benchmark**](https://chatio.dev): Benchmarked 30 leading LLMs across ~500 private prompts and 5 assistant-utility pillars, using human review, LLM judges, and deterministic checks.
+- [**Word Hunt**](https://wordhunt.org): Browser word game with 105K Google Search impressions, 3.9K organic clicks, and 14,988 page views in 30 days.
+- [**OurBets**](https://ourbets.app): Prediction markets for friend groups, with virtual balances, live odds, charts, and leaderboards.
 
-- Founder of **Bay Area Stem Academy** ([BASA](https://bayareastemacademy.org)), a non-profit providing free STEM education to students — we've reached over 600 students!
-https://github.com/Bay-Area-Stem-Academy
----
+### Elsewhere
 
-### A Couple of My Projects
-
-- [**Chatio Agentic Behavior Benchmark** | chatio.dev](https://chatio.dev): An evaluation suite for large language models that focuses on real-world usability.
-- [**Word Hunt Game** | wordhunt.org](https://wordhunt.org): An interactive word game built with Next.js and TypeScript.
-
+- Founder of [**Bay Area Stem Academy**](https://bayareastemacademy.org): 660+ students taught, $35,000+ in free Stem education, $5,000+ donated, 15+ camps hosted, 5+ partner schools, and a SanDisk collaboration.
