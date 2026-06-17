@@ -19,6 +19,13 @@ Hi, I'm Alex Tyh Wang. I study Computer Science at [RIT](https://www.rit.edu/) a
 - [**Word Hunt**](https://wordhunt.org): Browser word game with 105K Google Search impressions, 3.9K organic clicks, and 14,988 page views in 30 days.
 - [**OurBets**](https://ourbets.app): Prediction markets for friend groups, with virtual balances, live odds, charts, and leaderboards.
 
+### More Open Source
+
+- [**iMessages Chatbot Server**](https://github.com/alextyhwang/iMessages-Chatbot-Server): Python iMessage API gateway for concurrent, stateful AI conversations through the macOS Messages app.
+- [**texttyper**](https://github.com/alextyhwang/texttyper): Human-like typing automation with configurable WPM, natural pauses, typo correction, and markdown support.
+- [**ATW Client**](https://github.com/alextyhwang/ATW-Client): Minecraft 1.8.9 client focused on Hypixel BedWars improvements.
+- [**ATW's Levelhead**](https://github.com/alextyhwang/ATW-s-Levelhead): Hypixel Levelhead mod for Weave.
+
 ### Elsewhere
 
 - Founder of [**Bay Area Stem Academy**](https://bayareastemacademy.org): 660+ students taught, $35,000+ in free Stem education, $5,000+ donated, 15+ camps hosted, 5+ partner schools, and a SanDisk collaboration.
