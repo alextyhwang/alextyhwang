@@ -14,12 +14,12 @@ Hi, I'm Alex Tyh Wang. I study Computer Science at [RIT](https://www.rit.edu/) a
 
 ### Projects
 
-- <img align="absmiddle" src="project-icons/chatio-chat.svg" width="16" height="16" alt="Chatio Chat icon"> [**Chatio Chat**](https://github.com/alextyhwang/chatio-chat): Self-hostable AI chat for private browser conversations.<br>
-  300+ OpenRouter models, BYO API keys, local browser storage, Apache-2.0.
-- <img align="absmiddle" src="project-icons/chatio-benchmark.svg" width="16" height="16" alt="Chatio Benchmark icon"> [**Chatio Benchmark**](https://chatio.dev): LLM benchmark focused on practical assistant behavior.<br>
-  30 leading models, ~500 private prompts, 5 pillars, human review, LLM judges, deterministic checks.
-- <img align="absmiddle" src="project-icons/word-hunt.png" width="16" height="16" alt="Word Hunt icon"> [**Word Hunt**](https://wordhunt.org): Browser word game built for quick rounds and organic search.<br>
-  105K Search impressions, 3.9K organic clicks, and 14,988 page views in 30 days.
+- <img align="absmiddle" src="project-icons/chatio-chat.svg" width="16" height="16" alt="Chatio Chat icon"> [**Chatio Chat**](https://github.com/alextyhwang/chatio-chat): An open source general use AI chat for developers. Works with any model, you can create and test your harness.<br>
+  OpenAI API, Anthropic, Google Vertex, 300+ OpenRouter models, BYO API keys, local browser storage, Apache-2.0.
+- <img align="absmiddle" src="project-icons/chatio-benchmark.svg" width="16" height="16" alt="Chatio Benchmark icon"> [**Chatio Benchmark**](https://chatio.dev): A LLM benchmark focused on practical assistant behavior. ~500 private prompts<br>
+  30 leading models, 5 pillars, human review, LLM judges, deterministic checks.
+- <img align="absmiddle" src="project-icons/word-hunt.png" width="16" height="16" alt="Word Hunt icon"> [**Word Hunt**](https://wordhunt.org): Word-tile game with daily puzzles, free play, friend challenges, and leaderboards.<br>
+  2100+ Active Users, 105K Search impressions, 3.9K organic clicks, and 14,988 page views in past 30 days.
 - <img align="absmiddle" src="project-icons/ourbets.svg" width="16" height="16" alt="OurBets icon"> [**OurBets**](https://ourbets.app): Prediction markets for friend groups, with virtual balances, live odds, charts, and leaderboards.
 
 ### More Open Source
