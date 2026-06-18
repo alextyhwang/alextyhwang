@@ -14,7 +14,7 @@ Hi, I'm Alex Tyh Wang. I study Computer Science at [RIT](https://www.rit.edu/) a
 
 ### Projects
 
-- <img align="absmiddle" src="project-icons/chatio-chat.svg" width="16" height="16" alt="Chatio Chat icon"> [**Chatio Chat**](https://github.com/alextyhwang/chatio-chat): An open source general use AI chat for developers. Works with any model, you can create and test your harness.<br>
+- <img align="absmiddle" src="project-icons/chatio-chat.svg" width="16" height="16" alt="Chatio Chat icon"> [**Chatio Chat**](https://github.com/alextyhwang/chatio-chat): An open source general use AI chat for developers. Works with any model. Create and test your harness.<br>
   OpenAI API, Anthropic, Google Vertex, 300+ OpenRouter models, BYO API keys, local browser storage, Apache-2.0.
 - <img align="absmiddle" src="project-icons/chatio-benchmark.svg" width="16" height="16" alt="Chatio Benchmark icon"> [**Chatio Benchmark**](https://chatio.dev): A LLM benchmark focused on practical assistant behavior. ~500 private prompts<br>
   30 leading models, 5 pillars, human review, LLM judges, deterministic checks.
