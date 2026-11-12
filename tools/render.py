@@ -281,7 +281,7 @@ def nice_day(d):
     return f"{MONTHS[dd.month - 1].upper()} {dd.day}"
 
 
-def usage_chart(theme, usage, days=90, animate=False):
+def usage_chart(theme, usage, days=30, animate=False):
     th = THEMES[theme]
     rows = usage["days"][-days:]
     codex = [r[1] for r in rows]

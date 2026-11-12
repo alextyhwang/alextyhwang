@@ -35,5 +35,5 @@ I study Computer Science at [RIT](https://www.rit.edu/) and build AI products, g
 
 <br>
 
-<img src="https://raw.githubusercontent.com/alextyhwang/alextyhwang/output/usage-dark.svg#gh-dark-mode-only" alt="AI tokens per day over the last 90 days, for Claude, Codex and other providers" width="840">
-<img src="https://raw.githubusercontent.com/alextyhwang/alextyhwang/output/usage-light.svg#gh-light-mode-only" alt="AI tokens per day over the last 90 days, for Claude, Codex and other providers" width="840">
+<img src="https://raw.githubusercontent.com/alextyhwang/alextyhwang/output/usage-dark.svg#gh-dark-mode-only" alt="AI tokens per day over the last 30 days, for Claude, Codex and other providers" width="840">
+<img src="https://raw.githubusercontent.com/alextyhwang/alextyhwang/output/usage-light.svg#gh-light-mode-only" alt="AI tokens per day over the last 30 days, for Claude, Codex and other providers" width="840">
