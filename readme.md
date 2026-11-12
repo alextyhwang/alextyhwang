@@ -1,16 +1,16 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="alexdark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="alexlight.svg">
-  <img alt="Alex Tyh Wang" src="alexlight.svg">
-</picture>
-
 <p align="center">
-  <a href="https://www.linkedin.com/in/alex-tyh-wang/" target="_blank" rel="noopener noreferrer"><img src="social-icons/linkedin.svg" alt="LinkedIn" width="70" height="70"></a>
-  <a href="https://x.com/alextyhwang" target="_blank" rel="noopener noreferrer"><img src="social-icons/x.svg" alt="X (Twitter)" width="70" height="70"></a>
-  <a href="mailto:at.alex.wang@gmail.com" target="_blank" rel="noopener noreferrer"><img src="social-icons/email.svg" alt="Email" width="70" height="70"></a>
+  <img src="assets/header-dark.svg#gh-dark-mode-only" alt="Hi, I'm Alex Tyh Wang" width="840">
+  <img src="assets/header-light.svg#gh-light-mode-only" alt="Hi, I'm Alex Tyh Wang" width="840">
 </p>
 
-Hi, I'm Alex Tyh Wang. I study Computer Science at [RIT](https://www.rit.edu/) and build AI products, games, and useful tools.
+<p align="center">
+  <a href="https://www.linkedin.com/in/alex-tyh-wang/" target="_blank" rel="noopener noreferrer"><img src="assets/linkedin.svg" alt="LinkedIn" title="LinkedIn" width="32" height="32"></a>
+  <a href="https://x.com/alextyhwang" target="_blank" rel="noopener noreferrer"><img src="assets/x.svg" alt="X (Twitter)" title="X: @alextyhwang" width="32" height="32"></a>
+  <a href="mailto:at.alex.wang@gmail.com" target="_blank" rel="noopener noreferrer"><img src="assets/email.svg" alt="Email" title="at.alex.wang@gmail.com" width="32" height="32"></a>
+  <a href="https://alexwang.site" target="_blank" rel="noopener noreferrer"><img src="assets/website.svg" alt="Website: alexwang.site" title="alexwang.site" width="32" height="32"></a>
+</p>
+
+I study Computer Science at [RIT](https://www.rit.edu/) and build AI products, games, and useful tools.
 
 ### Projects
 
@@ -32,3 +32,8 @@ Hi, I'm Alex Tyh Wang. I study Computer Science at [RIT](https://www.rit.edu/) a
 ### Elsewhere
 
 - <img align="absmiddle" src="project-icons/bay-area-stem-academy.png" width="16" height="16" alt="Bay Area Stem Academy icon"> Founder of [**Bay Area Stem Academy**](https://bayareastemacademy.org): 660+ students taught, $35,000+ in free Stem education, $5,000+ donated, 15+ camps hosted, 5+ partner schools, and a SanDisk collaboration.
+
+<br>
+
+<img src="https://raw.githubusercontent.com/alextyhwang/alextyhwang/output/usage-dark.svg#gh-dark-mode-only" alt="AI tokens per day over the last 90 days, for Claude, Codex and other providers" width="840">
+<img src="https://raw.githubusercontent.com/alextyhwang/alextyhwang/output/usage-light.svg#gh-light-mode-only" alt="AI tokens per day over the last 90 days, for Claude, Codex and other providers" width="840">

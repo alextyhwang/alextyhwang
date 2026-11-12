@@ -1,0 +1,55 @@
+# Redraws the AI tokens chart from https://www.alexwang.site/api/ai-activity
+# every hour and publishes it to the `output` branch (one commit, replaced each
+# time, made by github-actions[bot] so it never counts as Alex's contribution).
+# The README shows it from raw.githubusercontent.com/.../output/.
+name: AI usage chart
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["tools/**", ".github/workflows/usage-chart.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: usage-chart
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install fonttools
+        run: pip install "fonttools>=4.40,<5"
+
+      - name: Render
+        run: python tools/render.py usage out
+
+      - name: Publish to the output branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git fetch -q --depth=1 origin output 2>/dev/null \
+            && git show FETCH_HEAD:usage-dark.svg | cmp -s - out/usage-dark.svg \
+            && git show FETCH_HEAD:usage-light.svg | cmp -s - out/usage-light.svg; then
+            echo "Chart unchanged; nothing to publish."
+            exit 0
+          fi
+          cd out
+          git init -q -b output
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add usage-dark.svg usage-light.svg
+          git commit -q -m "Update AI usage chart"
+          git push -q -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" output
