@@ -35,5 +35,7 @@ I study Computer Science at [RIT](https://www.rit.edu/) and build AI products, g
 
 <br>
 
-<img src="https://raw.githubusercontent.com/alextyhwang/alextyhwang/output/usage-dark.svg#gh-dark-mode-only" alt="AI tokens per day over the last 30 days, for Claude, Codex and other providers" width="840">
-<img src="https://raw.githubusercontent.com/alextyhwang/alextyhwang/output/usage-light.svg#gh-light-mode-only" alt="AI tokens per day over the last 30 days, for Claude, Codex and other providers" width="840">
+<img src="https://raw.githubusercontent.com/alextyhwang/alextyhwang/output/usage-dark.svg#gh-dark-mode-only" alt="T3 Code daily processed AI tokens over the last 30 days, for every provider" width="840">
+<img src="https://raw.githubusercontent.com/alextyhwang/alextyhwang/output/usage-light.svg#gh-light-mode-only" alt="T3 Code daily processed AI tokens over the last 30 days, for every provider" width="840">
+<img src="https://raw.githubusercontent.com/alextyhwang/alextyhwang/output/cost-dark.svg#gh-dark-mode-only" alt="T3 Code daily API-equivalent AI cost over the last 30 days, for every provider" width="840">
+<img src="https://raw.githubusercontent.com/alextyhwang/alextyhwang/output/cost-light.svg#gh-light-mode-only" alt="T3 Code daily API-equivalent AI cost over the last 30 days, for every provider" width="840">

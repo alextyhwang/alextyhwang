@@ -1,6 +1,6 @@
 """Renders the dithered images for the profile README.
 
-    python tools/render.py usage  OUT_DIR   # AI tokens chart (the hourly workflow runs this)
+    python tools/render.py usage  OUT_DIR   # token and cost charts
     python tools/render.py static OUT_DIR   # composer header and social buttons (run once, commit)
 
 The dither follows t3+ (github.com/alextyhwang/t3plus): Bayer ordered dither,
@@ -9,8 +9,9 @@ they show 1:1), the composer glow from ditherMath.js, the chart fill from
 ditherChart.js and the button tiles from botArt.js. Text is drawn as Geist
 outlines (tools/fonts, SIL OFL), so no font has to load on GitHub.
 
-Usage data comes from the public https://www.alexwang.site/api/ai-activity:
-only the date and tokens for Codex, Claude and the rest (summed as Other).
+Usage data comes from T3 Code's local `t3plus-home.json` feed when `--feed` is
+provided. Only daily provider totals are used. Without a feed, the public
+activity API remains a safe fallback for manual/Actions renders.
 Needs Python 3.10+ and fonttools.
 """
 import colorsys
@@ -19,7 +20,7 @@ import math
 import pathlib
 import sys
 from collections import defaultdict
-from datetime import date
+from datetime import date, timedelta
 
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
@@ -42,6 +43,21 @@ THEMES = {
     "light": dict(fg="#1f2328", muted="#59636e", faint="#1f2328", faint_a=0.07, border="#d1d9e0", card="#f6f8fa",
                   codex="#1f2328", claude="#d97757", accent=(37, 99, 235), bg="#ffffff"),
 }
+
+
+# The order and names follow T3 Code's Usage page. Unknown providers are kept
+# and receive a stable neutral color so a newly added provider is never lost.
+PROVIDERS = {
+    "codex": ("Codex", "#f0f6fc", "#1f2328"),
+    "claude": ("Claude Code", "#d97757", "#d97757"),
+    "grok": ("Grok Build", "#a8adb5", "#59636e"),
+    "cursor": ("Cursor", "#8b8b8b", "#59636e"),
+    "antigravity": ("Antigravity", "#8c7bd1", "#6b5bb5"),
+    "opencode": ("OpenCode", "#5b9bbd", "#3e718d"),
+    "pi": ("Pi", "#4d9f8a", "#34705f"),
+}
+PROVIDER_ORDER = ["codex", "claude", "grok", "cursor", "antigravity", "opencode", "pi"]
+UNKNOWN_COLORS = [("#b8c0cc", "#59636e"), ("#d69e62", "#a66d32"), ("#8eb4a5", "#4e7768")]
 
 
 def bayer(n):
@@ -213,19 +229,55 @@ REDUCED = "@media (prefers-reduced-motion:reduce){*{animation:none!important}}"
 API = "https://www.alexwang.site/api/ai-activity?days=140"
 
 
+def _fill_days(days):
+    """Return contiguous calendar rows so quiet days still occupy chart space."""
+    if not days:
+        return []
+    by_date = {d["date"]: d for d in days}
+    start, end = date.fromisoformat(days[0]["date"]), date.fromisoformat(days[-1]["date"])
+    out = []
+    cur = start
+    while cur <= end:
+        key = cur.isoformat()
+        out.append(by_date.get(key, {"date": key, "providers": {}}))
+        cur += timedelta(days=1)
+    return out
+
+
 def public_usage():
-    """Tokens per day from the public ai-activity API (the same source t3+ reads).
-    Only the date and tokens for codex, claude and everything else (as other) are used."""
+    """Read the public fallback and preserve every provider it reports."""
     import urllib.request
     req = urllib.request.Request(API, headers={"User-Agent": "alextyhwang-profile-readme"})
     with urllib.request.urlopen(req, timeout=30) as r:
         data = json.load(r)
     days = []
     for d in data.get("days") or []:
-        tok = {k: int((v or {}).get("tokens") or 0) for k, v in (d.get("providers") or {}).items()}
-        codex, claude = tok.get("codex", 0), tok.get("claude", 0)
-        days.append([str(d["date"])[:10], codex, claude, sum(v for k, v in tok.items() if k not in ("codex", "claude"))])
-    return {"v": 1, "unit": "tokens", "days": days}
+        providers = {}
+        for name, value in (d.get("providers") or {}).items():
+            providers[str(name)[:24]] = {"tokens": int((value or {}).get("tokens") or 0), "cost": 0.0}
+        days.append({"date": str(d["date"])[:10], "providers": providers})
+    return {"v": 2, "days": _fill_days(days), "source": "public-activity"}
+
+
+def feed_usage(path):
+    """Extract only aggregate provider spend from t3plus-home.json.
+
+    The feed also contains projects, automations and account limits. None of
+    those fields are copied into the returned value or the rendered SVGs.
+    """
+    raw = json.loads(pathlib.Path(path).read_text(encoding="utf-8"))
+    days = []
+    for key, by_provider in sorted((raw.get("spend") or {}).items()):
+        providers = {}
+        for name, value in (by_provider or {}).items():
+            if not isinstance(value, (list, tuple)) or len(value) < 2:
+                continue
+            try:
+                providers[str(name)[:24]] = {"cost": float(value[0] or 0), "tokens": int(value[1] or 0)}
+            except (TypeError, ValueError):
+                continue
+        days.append({"date": str(key)[:10], "providers": providers})
+    return {"v": 2, "days": _fill_days(days), "source": "t3plus-spend"}
 
 
 def fmt_tokens(v):
@@ -234,6 +286,21 @@ def fmt_tokens(v):
             s = f"{v / d:.1f}".rstrip("0").rstrip(".")
             return s + unit
     return str(int(v))
+
+
+def fmt_cost(v):
+    if v >= 1000:
+        return f"${v / 1000:.1f}k"
+    if v >= 100:
+        return f"${v:.0f}"
+    if v >= 10:
+        return f"${v:.1f}"
+    return f"${v:.2f}"
+
+
+def provider_meta(name, theme, index):
+    label, dark, light = PROVIDERS.get(name, (name.replace("_", " ").title(), *UNKNOWN_COLORS[index % len(UNKNOWN_COLORS)]))
+    return label, dark if theme == "dark" else light
 
 
 MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
@@ -281,38 +348,61 @@ def nice_day(d):
     return f"{MONTHS[dd.month - 1].upper()} {dd.day}"
 
 
-def usage_chart(theme, usage, days=30, animate=False):
+def usage_chart(theme, usage, days=30, animate=False, metric="tokens"):
     th = THEMES[theme]
     rows = usage["days"][-days:]
-    codex = [r[1] for r in rows]
-    claude = [r[2] for r in rows]
-    other = sum(r[3] for r in rows)
+    if len(rows) < 2:
+        raise ValueError("usage chart needs at least two calendar days")
+    names = set().union(*(r["providers"] for r in rows))
+    names = [p for p in PROVIDER_ORDER if p in names] + sorted(names - set(PROVIDER_ORDER))
+    series = []
+    for i, name in enumerate(names):
+        vals = [r["providers"].get(name, {}).get(metric, 0) for r in rows]
+        # Keep all providers with activity in this window, including tokens
+        # whose API-equivalent cost is currently unknown/zero.
+        active = any(r["providers"].get(name, {}).get("tokens", 0) or r["providers"].get(name, {}).get("cost", 0) for r in rows)
+        if active:
+            label, color = provider_meta(name, theme, i)
+            series.append((sum(vals), vals, color, label))
+    if not series:
+        series = [(0, [0] * len(rows), th["muted"], "No usage")]
     # Heaviest first, like T3's paint order.
-    others = [r[3] for r in rows]
-    order = sorted([(sum(codex), codex, th["codex"]), (sum(claude), claude, th["claude"]), (other, others, th["muted"])],
-                   key=lambda s: -s[0])
+    order = sorted(series, key=lambda s: -s[0])
     px, py, pw, ph = 44, 40, W - 46, 150
     area, peak = area_cells([s[1] for s in order], [s[2] for s in order], px, py, pw, ph, CELL)
-    total = sum(codex) + sum(claude) + other
-    parts = [text_path("AI tokens per day", 14, 2, 16, th["fg"], weight="Medium"),
-             text_path(f"{fmt_tokens(total)} tokens  \u00b7  last {days} days", 12, W - 2, 16, th["muted"], "end"),
-             text_path(fmt_tokens(peak).upper(), 9, 2, py + 9, th["muted"], tracking=0.6),
+    total = sum(s[0] for s in series)
+    fmt = fmt_tokens if metric == "tokens" else fmt_cost
+    heading = "AI tokens per day" if metric == "tokens" else "AI cost per day"
+    suffix = " tokens" if metric == "tokens" else " API estimate"
+    parts = [text_path(heading, 14, 2, 16, th["fg"], weight="Medium"),
+             text_path(f"{fmt(total)}{suffix}  \u00b7  last {days} days", 12, W - 2, 16, th["muted"], "end"),
+             text_path(fmt(peak).upper(), 9, 2, py + 9, th["muted"], tracking=0.6),
              text_path("0", 9, 2, py + ph, th["muted"]),
              f'<path d="M{px} {py + ph + 0.5}H{W - 2}" stroke="{th["border"]}"/>',
              f'<path d="M{px} {py + 0.5}H{W - 2}" stroke="{th["border"]}" stroke-dasharray="2 3"/>']
     for i, anchor in ((0, "start"), (len(rows) // 2, "middle"), (len(rows) - 1, "end")):
         x = px + (i / (len(rows) - 1)) * pw if anchor == "middle" else (px if anchor == "start" else W - 2)
-        parts.append(text_path(nice_day(rows[i][0]), 9, x, py + ph + 16, th["muted"], anchor, tracking=0.6))
-    items = [("Claude " + fmt_tokens(sum(claude)), th["claude"]), ("Codex " + fmt_tokens(sum(codex)), th["codex"])]
-    if other:
-        items.append(("Other " + fmt_tokens(other), th["muted"]))
-    parts.append(legend(th, items, px, py + ph + 40))
+        parts.append(text_path(nice_day(rows[i]["date"]), 9, x, py + ph + 16, th["muted"], anchor, tracking=0.6))
+    # Wrap the legend as provider support grows rather than collapsing to Other.
+    legend_y, line, line_w = py + ph + 40, [], 0
+    for amount, _, color, label in series:
+        item = (label + " " + fmt(amount), color)
+        _, item_w = text_glyphs(item[0], GEIST["Regular"], 11, 0, 0)
+        item_w += 29
+        if line and line_w + item_w > pw:
+            parts.append(legend(th, line, px, legend_y))
+            legend_y += 22
+            line, line_w = [], 0
+        line.append(item)
+        line_w += item_w
+    parts.append(legend(th, line, px, legend_y))
     style = ""
     if animate:
         area = (f'<clipPath id="wipe"><rect x="{px}" y="0" width="0" height="400">'
                 f'<animate attributeName="width" from="0" to="{pw}" dur="1.4s" begin="0.3s" fill="freeze" calcMode="spline" '
                 f'keySplines="0.2 0 0 1" keyTimes="0;1"/></rect></clipPath><g clip-path="url(#wipe)">{area}</g>')
-    return svg(py + ph + 50, area + "".join(parts), style)
+    result = svg(legend_y + 14, area + "".join(parts), style)
+    return result.replace('fill="none">', f'fill="none" role="img"><title>{heading}, last {days} days</title>', 1)
 
 
 SPIN_SECTORS = 16
@@ -508,18 +598,20 @@ def bot_tile(stops, glyph):
 
 
 def main(argv):
-    if len(argv) != 3 or argv[1] not in ("usage", "static"):
+    if len(argv) not in (3, 5) or argv[1] not in ("usage", "static") or (len(argv) == 5 and argv[3] != "--feed"):
         print(__doc__)
         return 2
     out = pathlib.Path(argv[2])
     out.mkdir(parents=True, exist_ok=True)
     files = {}
     if argv[1] == "usage":
-        usage = public_usage()
+        usage = feed_usage(argv[4]) if len(argv) == 5 else public_usage()
         if not usage["days"]:
             raise SystemExit("ai-activity returned no days")
         for theme in THEMES:
             files[f"usage-{theme}.svg"] = usage_chart(theme, usage)
+            if usage["source"] == "t3plus-spend":
+                files[f"cost-{theme}.svg"] = usage_chart(theme, usage, metric="cost")
     else:
         for theme in THEMES:
             files[f"header-{theme}.svg"] = header_b(theme)
