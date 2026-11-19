@@ -24,6 +24,7 @@ I study Computer Science at [RIT](https://www.rit.edu/) and build AI products, g
 
 ### More Open Source
 
+- <img align="absmiddle" src="project-icons/spotify-cupertino.svg" width="16" height="16" alt="Spotify Cupertino icon"> [**Spotify Cupertino**](https://github.com/alextyhwang/spotify-cupertino): Spotify redesigned to look and feel like a native Mac app, and use less CPU. One-line installer.
 - <img align="absmiddle" src="project-icons/imessages-chatbot-server.png" height="16" alt="iMessages Chatbot Server icon"> [**iMessages Chatbot Server**](https://github.com/alextyhwang/iMessages-Chatbot-Server): Python iMessage API gateway for concurrent AI conversations through macOS Messages.
 - <img align="absmiddle" src="project-icons/texttyper.png" height="16" alt="texttyper icon"> [**texttyper**](https://github.com/alextyhwang/texttyper): Human-like typing automation with configurable WPM, natural pauses, typo correction, and markdown support.
 - <img align="absmiddle" src="project-icons/atw-client.svg" width="16" height="16" alt="ATW Client icon"> [**ATW Client**](https://github.com/alextyhwang/ATW-Client): Minecraft 1.8.9 client focused on Hypixel BedWars improvements.
